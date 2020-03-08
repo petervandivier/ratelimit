@@ -1,0 +1,22 @@
+
+- a root object exists for every object
+- an object tree can be arbitrarily large
+- a root note must have attributeable limits
+
+for example node 5
+  - ratelimit "A" of 1 / minute
+  - quota "B" of 100 / day
+    - "B" can be expressed as (0.07 / minute) / day
+
+for limits measured over the same span, take the lesser value
+measure all cadidate limits over the appropriate span
+
+/*
+(10)        1
+            |\
+            2 3    (5)
+               \
+                4
+
+            5
+*/
