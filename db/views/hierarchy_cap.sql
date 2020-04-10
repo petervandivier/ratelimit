@@ -1,6 +1,6 @@
-create view hierarchy_cap 
+create view ntc_inheritance 
 as
-with recursive hierarchy as (
+with recursive ntc_inheritance as (
     select 
         a.id,
         a.parent,
@@ -19,16 +19,21 @@ with recursive hierarchy as (
         b.is_root,
         a.depth+1,
         coalesce(ntc.id, a.ntc_id)
-    from hierarchy a
+    from ntc_inheritance a
     join node b on b.parent = a.id
     left join node_type_cap ntc on ntc.node_id = b.id
     where b.is_root = false
 )
 select 
-    id,
-    parent,
-    "path",
-    is_root,
-    depth,
-    ntc_id
-from hierarchy;
+    ni.id as node_id,
+    ni.parent,
+    ni."path",
+    ni.is_root,
+    ni.depth,
+    ni.ntc_id,
+-- TODO: add inherited_from attribute for multiple tiers of skips?
+    ni.id != ntc.node_id as is_inherited,
+    ntc.type_id,
+    ntc.event_id
+from ntc_inheritance ni
+join node_type_cap ntc on ntc.id = ni.ntc_id;
