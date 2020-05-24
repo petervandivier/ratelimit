@@ -1,3 +1,3 @@
 
-\i ~/Desktop/ratelimit/db/views/hierarchy.sql
-\i ~/Desktop/ratelimit/db/views/hierarchy_cap.sql
+\i ./views/hierarchy.sql
+\i ./views/hierarchy_cap.sql
