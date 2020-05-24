@@ -19,4 +19,31 @@ left outer join filtered_event e
 where  c."timestamp" between '2020-03-08 22:28' and '2020-03-08 22:35'
 group by c."timestamp", e.node_id;
 
+-- agg sum over arbitrary time frame
+with filtered_event as (
+    select *
+    from event
+    where node_id = 7
+)
+select 
+    cw.start_timestamp, 
+    cw.end_timestamp, 
+    e.node_id,
+    sum(e.quantity)
+from calendar_window(
+    '2020-03-08 22:30',
+    '2020-03-08 22:33',
+    '30 seconds'
+) cw
+left join filtered_event e
+    on e."timestamp" >= cw.start_timestamp
+    and e."timestamp" < cw.end_timestamp
+group by 
+    cw.start_timestamp, 
+    cw.end_timestamp, 
+    e.node_id
+order by 1;
+
+
+
 
