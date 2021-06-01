@@ -1,4 +1,4 @@
-insert into node
+insert into actor
 (id, parent)
 values
 (1,1),

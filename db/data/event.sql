@@ -1,5 +1,5 @@
 insert into "event"
-(node_id, quantity, type_id, "timestamp")
+(actor_id, quantity, type_id, "timestamp")
 values
 (1, 1, 1, '2020-03-08 22:30:00.0+00'),
 (3, 1, 1, '2020-03-08 22:30:10.0+00'),

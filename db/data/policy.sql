@@ -1,5 +1,5 @@
 insert into "policy"
-(node_id, type_id, cap_id)
+(actor_id, type_id, cap_id)
 values
 (1,1,3),
 (3,1,1),
