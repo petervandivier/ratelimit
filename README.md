@@ -42,7 +42,7 @@ At depth
 {
   "node_id":     3,
   "parent":      1,
-  "path":        "{1,3}",
+  "path":        [1, 3],
   "ntc_id":      2,
   "quantity":    10,
   "span":        "00:01:00",
