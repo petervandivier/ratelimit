@@ -32,7 +32,7 @@ In the above table, we see the following entities...
 
 ### Root actor
 
-`actor_id` 1 is a root & is assigned a cap for `type` 1 of 10 events per 1-minute span.
+`actor_id` 1 is a root & is assigned a cap for `event_type` 1 of 10 events per 1-minute span.
 
 ### actor_id 3
 
