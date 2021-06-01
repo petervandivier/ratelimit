@@ -1,4 +1,4 @@
-create table node_type_cap (
+create table "policy" (
     id      serial not null primary key,
     node_id int not null references node (id),
     type_id int not null references "type" (id),
