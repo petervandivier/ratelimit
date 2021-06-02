@@ -1,4 +1,4 @@
-insert into "type"
+insert into event_type
 (id,"name")
 values
 (1,'foo'),

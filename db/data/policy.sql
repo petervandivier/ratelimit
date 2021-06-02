@@ -1,5 +1,5 @@
-insert into node_type_cap
-(node_id, type_id, cap_id)
+insert into "policy"
+(actor_id, event_type_id, rate_id)
 values
 (1,1,3),
 (3,1,1),

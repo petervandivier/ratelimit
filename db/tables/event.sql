@@ -1,8 +1,8 @@
 
 create table "event" (
     id          bigserial not null primary key,
-    node_id     int       not null references node (id),
+    actor_id     int       not null references actor (id),
     quantity    int       not null,
-    type_id     int       not null references "type" (id),
+    type_id     int       not null references event_type (id),
     "timestamp" timestamp with time zone not null default now()
 );
