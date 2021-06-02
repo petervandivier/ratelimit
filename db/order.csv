@@ -1,7 +1,7 @@
 order,name
 1,event_type
 2,actor
-3,cap
+3,rate
 4,policy
 5,event
 6,calendar

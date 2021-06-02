@@ -1,4 +1,4 @@
-insert into cap
+insert into rate
 (id, quantity, span,                 "description",  type_label)
 values
 (1,  5,        '1 minute'::interval, '5 per minute',  'ratelimit'),

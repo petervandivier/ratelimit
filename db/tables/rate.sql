@@ -1,4 +1,4 @@
-create table cap (
+create table rate (
     id            serial   not null primary key,
     quantity      int      not null,
     span          interval not null,
@@ -7,5 +7,5 @@ create table cap (
     check (type_label in ('ratelimit','quota'))
 );
 
-comment on column cap.quantity is 'static rate of events/minute';
-comment on column cap.span     is 'time interval over which quantity is to be enforced';
+comment on column rate.quantity is 'static rate of events/minute';
+comment on column rate.span     is 'time interval over which quantity is to be enforced';
